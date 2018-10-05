@@ -1,0 +1,200 @@
+
+  
+  canvas {
+    background-color    : rgba(255, 255, 255, 0.0);
+    top                 : 26.3vh;
+    height              : 28vh;
+    width               : 11vw;
+    position            : absolute;
+    margin              : 0;
+    left                : 14.5vw;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(150, 150, 150, 1.0);
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#pop_button {
+    background-color: rgba(153, 204, 63, 100);
+    top: 38vh;
+    /*height: 4vh;*/
+    /* ; */
+    height : 35px;
+    width:115px;
+    position: absolute;
+    margin: 0;
+    left  : 29vw;
+    border-radius: 30px;
+    border-width: 0px;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    color:white;
+    font-size: 20px;
+    box-shadow: 0 5px 0px 0 rgba(0,0,0,0.2), 0 3px 0px 0 rgba(0,0,0,0.19);
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+
+#tooutput {
+    top: 44vh;
+    height:50px;
+    width:50px;
+    position: absolute;
+    margin: 0;
+    left  : 29vw;
+    border-radius: 50px;
+    border-width: 0px;
+    color:white;
+    font-size: 20px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+#tooutputtext {
+    top: 44vh;
+    width:500px;
+    position: absolute;
+    margin: 0;
+    left  : 30vw;
+    border-radius: 25px;
+    border-width: 0px;
+    color:black;
+    font-size: 14px;
+}
+
+#toignore {
+    top: 44vh;
+    height:50px;
+    width:50px;
+    position: absolute;
+    margin: 0;
+    left  : 35vw;
+    border-radius: 50px;
+    border-width: 0px;
+    color:white;
+    font-size: 20px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#toignoretext{
+    top: 44vh;
+    width:500px;
+    position: absolute;
+    margin: 0;
+    left  : 36vw;
+    border-radius: 25px;
+    border-width: 0px;
+    color:black;
+    font-size: 14px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#pushtostack {
+    border: none;
+    border-bottom: 1px solid grey;
+    top: 23vh;
+    left: 16vw;
+    width:160px;
+    position: absolute;
+    margin: 0;
+    font-size: 14px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+#push_tostack_button {
+    background-color: white;
+    color : grey;
+    top: 22vh;
+    left: 23vw;
+    width:35px;
+    position: absolute;
+    margin: 0;
+    border: 0px;
+    font-size: 24px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+#typetooutput {
+    border: none;
+    border-bottom: 1px solid grey;
+    top: 23vh;
+    left: 47vw;
+    width:160px;
+    position: absolute;
+    margin: 0;
+    font-size: 14px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+#type_tooutput_button {
+    background-color: white;
+    color : grey;
+    top: 22vh;
+    left: 54vw;
+    width:35px;
+    position: absolute;
+    margin: 0;
+    border: 0px;
+    font-size: 24px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#push_to_stack_text {
+    background-color: white;
+    color : black;
+    top: 26vh;
+    left: 17vw;
+    width:95px;
+    position: absolute;
+    margin: 0;
+    border: 0px;
+    font-size: 14px;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#to_output {
+    color       : rgba(0, 0, 0, 1.0);
+    top         : 26vh;
+    left        : 48vw;
+    width       : 95px;
+    position    : absolute;
+    margin      : 0;
+    border      : 0px;
+    font-size   : 14px;
+    font-family : "OpenSans-Regular", Helvetica, Arial, serif;
+    background-color    : white;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#question {
+    color       : rgba(0, 0, 0, 1.0);
+    top         : 17vh;
+    left        : 12vw;
+    width       : 550px;
+    position    : absolute;
+    margin      : 0;
+    border      : 0px;
+    font-size   : 17px;
+    font-family : "OpenSans-Regular", Helvetica, Arial, serif;
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+button{
+    text-align: center;
+}

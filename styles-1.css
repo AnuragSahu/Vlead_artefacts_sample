@@ -1,0 +1,159 @@
+
+input {
+    position: absolute;
+    /* border:01px; */  
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    left:40vw;
+    top:25vh;
+
+}
+
+  #push_button {
+      background: url('./arrow-down.png');
+      background-size: 20px;
+      /* background-position: 5vw;  */
+      background-position:center;
+background-repeat:no-repeat;
+    /* background-color: rgba(153, 204, 63, 100); */
+    top: 24vh;
+    height: 5vh;
+    width: 5vw;
+    /* ; */
+    position: absolute;
+    margin: 0;
+    left                : 57vw;
+    border-radius: 12px;
+    border-width: 0px;
+    -ms-transform: rotate(0deg);
+    font-size: 18px;
+
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+#pop_button {
+    background-color: rgba(153, 204, 63, 100);
+    top: 43vh;
+    /* height: 10vh; */
+    /* ; */
+    width:80px;
+    position: absolute;
+    margin: 0;
+    left                : 65vw;
+    border-radius: 12px;
+    border-width: 0px;
+    -ms-transform: rotate(0deg);
+    color:white;
+    font-size: 18px;
+
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+  canvas {
+    background-color    : rgba(255, 255, 255, 0.0);
+    top                 : 30vh;
+    height              : 35vh;
+    width               : 20vw;
+    position            : absolute;
+    margin              : 0;
+    left                : 40vw;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(150, 150, 150, 1.0);
+    -ms-transform       : rotate(0deg); /* IE 9 */
+    -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+    transform           : rotate(0deg);
+}
+
+#add_button {
+    background-color: rgba(255, 255, 255, 0.0);
+    top: 30vh;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    box-shadow: 2px 2px;
+    position: absolute;
+    margin: 2vw;
+    left: 65vw;
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+
+#subtract_button {
+    background-color: rgba(255, 255, 255, 0.0);
+    top: 30vh;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    box-shadow: 2px 2px;
+    position: absolute;
+    margin: 2vw;
+    left: 70vw;
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+
+#multiply_button {
+    background-color: rgba(255, 255, 255, 0.0);
+    top: 30vh;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    box-shadow: 2px 2px;
+    position: absolute;
+    margin: 2vw;
+    left: 75vw;
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+
+#divide_button {
+    background-color: rgba(255, 255, 255, 0.0);
+    top: 30vh;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    box-shadow: 2px 2px;
+    position: absolute;
+    margin: 2vw;
+    left: 80vw;
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+
+#exponent_button {
+    background-color: rgba(255, 255, 255, 0.0);
+    top: 30vh;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    box-shadow: 2px 2px;
+    position: absolute;
+    margin: 2vw;
+    left: 85vw;
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+button{
+    text-align: center;
+}

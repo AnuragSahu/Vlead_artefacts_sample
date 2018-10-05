@@ -1,0 +1,524 @@
+#+TITLE: Infix to Postfix Conversion and Evaluation of Postfix 
+#+AUTHOR: Sowrya Deep and Keshavan
+#+DATE: [2018-06-13]
+#+SETUPFILE: asdasd../../org-templates/level-2.org
+#+TAGS: boilerplate(b)
+#+EXCLUDE_TAGS: boilerplate
+#+OPTIONS: ^:nil
+
+
+* Introduction
+
+ Here is the JavaScript implementation of Postfix Evaluation Excercise
+ with the following operations:
+
+
+* create element
+#+NAME: create element
+#+BEGIN_SRC javascript
+// creates specified element and assignes an id
+function create_element(tag,id){
+var elemc = document.createElement(tag);
+elemc.id=id;
+return elemc;
+}
+#+END_SRC
+
+* create element with class
+#+NAME: create element with class
+#+BEGIN_SRC javascript
+
+function create_element_with_class(tag,id,classname,text){
+var elemc = document.createElement(tag);
+elemc.id=id;
+elemc.className = classname;
+				// elemc.type=type;
+				elemc.innerHTML = text;
+				return elemc;
+				// $("<input>", 
+				// 	{ type:'text', 
+				// 	placeholder:'Keywords', 
+				// 	name:'keyword', 
+				// 	style:'width:65%' }
+				// )
+			}
+#+END_SRC
+
+* create button
+#+NAME: create button
+#+BEGIN_SRC javascript
+
+function create_button(id,className,name,type,text){
+				var elem = document.createElement("button");
+				elem.id=id;
+				elem.className = className;
+				elem.name = name;
+				elem.type=type;
+				elem.innerHTML = text;
+				return elem;
+			}
+#+END_SRC
+* Generate DOM elements
+#+NAME: generate DOM elements
+#+BEGIN_SRC javascript
+$('#createElements').html('');
+            var arr = [],arr1 = [], temp1,temp2;
+			var element_generate  = new Elements();	
+			console.log("New");
+			arr.push(element_generate.create_button("generate_random_postfix_button","btn btn-default","s","button","Generate random postfix"));
+            // arr.push(create_button("generate_random_postfix_button","btn btn-default","s","button","Generate random postfix" ));
+			temp1 = element_generate.create_element("input","question_postfix");
+			temp1.type="tel";
+            arr.push(temp1);
+            temp2 = element_generate.create_element("input","numbers");temp2.type="tel";temp2.placeholder = "Enter a number to push";temp2.max = "999999";
+			arr.push(temp2);
+
+			// arr.push(create_button("Enter_button","btn btn-warning","","button","<--- Enter"));
+			
+			arr.push(element_generate.create_button("push_button","btn btn-danger","","button","Push"));
+
+			arr.push(element_generate.create_button("pop_button","btn btn-danger","","button","Pop"));
+
+			arr.push(element_generate.create_button("enable_operators_button","btn btn-default","s","button","Enable Operators"));
+
+			arr.push(element_generate.create_button("restart_button","btn btn-info","","reset","Restart"));
+
+            arr.push(element_generate.create_button("check_answer","btn btn-success","","button","Check Answer"));
+
+            arr.push(element_generate.create_button("add_button","btn btn-default","operators","button","+"));
+
+			arr.push(element_generate.create_button("subtract_button","btn btn-default","operators","button","-"));
+
+			arr.push(element_generate.create_button("multiply_button","btn btn-default","operators","button","*"));
+
+			arr.push(element_generate.create_button("divide_button","btn btn-default","operators","button","/"));
+
+			arr.push(element_generate.create_button("exponent_button","btn btn-default","operators","button","^"));
+
+			arr.push(element_generate.create_button("show_answer","btn btn-primary","","button","Show Answer"));
+
+			
+			var canvas_test = element_generate.create_element("canvas","stackArray");
+			
+			
+			
+			canvas_test.width = "3000";canvas_test.height="600";canvas_test.innerHTML="Your browser does not support canvas.";
+			arr1.push(canvas_test);
+			console.log(arr);
+			$('#createElements').append(arr);
+			$('#canvas_element').append(arr1);
+#+END_SRC
+
+* Initialise variables
+#+NAME:Initialise variables
+#+BEGIN_SRC javascript
+
+			var canvas = document.getElementById("stackArray");
+			var ctx = canvas.getContext("2d");
+			//Font of numbers to be inserted
+			//Dimensions of array rectangle
+			//arrayLength = 550;
+			//arrayHeight = 550;
+	
+			//Number of array blocks
+			//arrayNo = 10;
+			//Starting position of array coordinates
+			var exp_start_x = 100;
+			var exp_start_y = 100;
+			// var gap = 20;
+			var pointer=0;
+			var box_start_x = 300;
+			var box_start_y = 600;
+			var	box_height = 40;
+			var box_length = 150;
+
+
+#+END_SRC
+
+* Clear the canvas
+#+NAME:Clear the canvas
+#+BEGIN_SRC javascript
+
+			function clearCanvas() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+			}
+
+
+#+END_SRC
+* Draw in the Canvas
+#+NAME: Draw in the Canvas
+#+BEGIN_SRC javascript
+function draw_expression() {
+				
+	
+					ctx.font = "25px Arial";
+					
+					var txt = expression.join('  ');
+					var exp = new Array();
+					var txt2 = exp.join('  ');
+					//Coordinates of number_of_boxes
+					var txtWidth = ctx.measureText(txt).width;
+					console.log(expression);
+					var txtX = exp_start_x ; 
+					var txtY = exp_start_y;
+	
+					// var sub_string1 = txt.substr(0,pointer);
+					// var sub_string2 = txt.substr(pointer,1);
+					if(expression[pointer]!=null)
+					var sub_string3 = txt.substr((2+expression[pointer].length)*pointer);
+					else
+					var sub_string3= " ";
+					// ctx.fillStyle = "red";
+					// ctx.fillRect(txtX + 30 * pointer, txtY, box_length/16,box_height/6);
+					ctx.fillStyle = "blue";
+					ctx.fillText(sub_string3, txtX, txtY);
+					// console.log(sub_string1);
+					// console.log(sub_string2);
+					// console.log(sub_string3);
+					// ctx.fillText(sub_string1, txtX-200, txtY);
+					// ctx.fillStyle = "red";
+					// ctx.fillText(sub_string2, txtX, txtY);
+					// ctx.fillStyle = "blue";
+					// ctx.fillText(sub_string3, txtX+200, txtY);
+				
+			}
+
+#+END_SRC
+
+* define the box boundaries
+#+NAME: define the box boundaries
+#+BEGIN_SRC javascript
+			// //Drawing the base of the array
+			function draw_box() {
+	
+	
+					clearCanvas();
+					ctx.beginPath();
+					for(var i=0;i<values.length;i++)
+					{
+						// ctx.fillStyle = "#1565c0";
+						ctx.fillStyle = "red";
+						ctx.fillRect(box_start_x, box_start_y - box_height * (i + 1), box_length, box_height);
+						ctx.stroke();
+						ctx.strokeStyle="blue";
+						ctx.rect(box_start_x, box_start_y - box_height * (i + 1), box_length, box_height);
+						ctx.stroke();
+					}
+					ctx.closePath();
+	
+	
+			}
+
+
+#+END_SRC
+
+* double pop
+#+NAME: double pop
+#+BEGIN_SRC javascript
+                        function double_pop()
+			{
+				var operand1=parseInt(values[values.length-1]);
+				values.pop();
+				writeNumbers();
+	
+				var operand2=parseInt(values[values.length-1]);
+					values.pop();
+				writeNumbers();
+				if(!(values.length > 0)){
+					$('[name="operators"]').prop('disabled',true);
+					$('#enable_operators_button').prop('disabled',true);
+				}
+				return [operand1,operand2];
+			}
+
+#+END_SRC
+
+* writeNumbers
+#+NAME: writeNumbers
+#+BEGIN_SRC javascript
+	//Function to write the values entered by the user into the array
+			function writeNumbers() {
+	
+				
+				//draw_expression();
+				draw_box();
+				//  draw_expression();
+				//Fill array with numbers
+				for(var i=0; i<values.length; i++) {
+	
+					ctx.font = "25px Arial";
+					// ctx.font = font_size;
+					var txt = values[i].toString();
+					var txtWidth = ctx.measureText(txt).width;
+	
+					//Coordinates of numbers
+	
+					var txtX = box_start_x + box_length/2-txtWidth/2;
+					var txtY = box_start_y - box_height*(i+1) + (box_height)/2 + 8;
+					ctx.fillStyle = "white";
+					ctx.fillText(txt, txtX, txtY);
+	
+				}
+	
+			}
+
+#+END_SRC
+
+# * Enter Button
+#+NAME: Enter Button
+#+BEGIN_SRC javascript
+			$('#Enter_button').on('click', function () {
+				var exp_var= document.getElementById('numbers').value;
+	
+				// if(!(expression.length > 1)){
+				// 	$('.operations').prop('disabled',true);
+				// }
+				// var head_pointer = 0;
+				if(exp_var != '')
+				{
+					//values.push(value);
+					expression.push(exp_var);
+				}
+				
+				// if((expression.length > 1)){
+				// 	$('.operations').prop('disabled',false);
+				// }
+				// console.log(value);
+				//number_of_boxes = number_of_boxes + 1;
+				draw_expression();
+				// writeNumbers();
+			});
+
+#+END_SRC
+
+* Push Button 
+#+NAME: Push Button
+#+BEGIN_SRC javascript
+$('#push_button').on('click', function () {
+				
+				var value = document.getElementById('numbers').value;
+				if(!(values.length > 1)){
+					$("[name='operators]").prop('disabled',true);
+					$('#enable_operators_button').prop('disabled',true);
+				}
+				if($.isNumeric(value)){
+					
+				
+				if(value != null)
+				{
+					
+					values.push(value);
+					// expression.push(value);
+				}
+				else
+				{
+					pointer--;
+				}
+				if((values.length > 1)){
+					$("[name='operators']").prop('disabled',false);
+					$('#enable_operators_button').prop('disabled',false);
+				}
+				console.log(value);
+				//number_of_boxes = number_of_boxes + 1;
+	
+				writeNumbers();
+				}
+				else{
+					document.getElementById('numbers').value = "";
+					document.getElementById('numbers').placeholder = "Operators are not pushed to stack";
+				}
+			});
+#+END_SRC
+
+* Show Answer Button
+#+NAME: Show Answer Button
+#+BEGIN_SRC javascript
+$('#show_answer').on('click',function() {
+				ctx.fillStyle = "blue";
+				ctx.fillText((eval_postfix(document.getElementById('question_postfix').value)), 100, 200);
+			})
+#+END_SRC
+
+* Pop Button
+#+NAME: Pop Button
+#+BEGIN_SRC javascript
+	$('#pop_button').on('click',function () {
+	
+				values.pop();
+				writeNumbers();
+				if(!(values.length > 1)){
+					$("[name='operators']").prop('disabled',true);
+					$('#enable_operators_button').prop('disabled',true);
+				}
+	
+			});
+#+END_SRC
+
+* Enable Operators
+#+NAME: Enable Operators
+#+BEGIN_SRC javascript
+                              $('#enable_operators_button').on('click',function () {
+				var operators = document.getElementsByName("operators");
+				if(operators[0].style.display == "none"){
+					for (var i = 0; i < operators.length; i++)
+					{
+						operators[i].style.display = "block";
+					}
+				}
+				else{
+					for (var i = 0; i < operators.length; i++)
+					{
+						operators[i].style.display = "none";
+					}
+				}
+			});
+
+#+END_SRC
+
+* Check Answer
+#+NAME: Check Answer
+#+BEGIN_SRC javascript
+$('#check_answer').on('click', function () {
+                var txtX = 100;
+                var txtY = 200;
+              
+                if(eval_postfix(document.getElementById('question_postfix').value) == values[0] && values.length == 1)
+                {
+
+                    ctx.fillStyle = "blue";
+                    ctx.fillText("Correct!", txtX, txtY);   
+                }
+                else{
+                    ctx.fillStyle = "blue";
+					ctx.fillText("Wrong!", txtX, txtY);
+                }
+
+            });
+#+END_SRC
+* Add Button
+#+NAME: Add Button
+#+BEGIN_SRC jacascript
+                        $('#add_button').on('click',function() {
+				var operands = double_pop();
+				// expression.push('+');
+				values.push(parseFloat((parseFloat(operands[1])+parseFloat(operands[0])).toFixed(3)));
+				writeNumbers();
+			});
+
+#+END_SRC
+
+* Subtract Button
+#+NAME: Subtract Button
+#+BEGIN_SRC javascript
+			$('#subtract_button').on('click',function () {
+				var operands = double_pop();
+				// expression.push('-');
+				values.push(parseFloat((parseFloat(operands[1])-parseFloat(operands[0])).toFixed(3)));
+				writeNumbers();
+			});
+
+#+END_SRC
+
+* Multiply Button
+#+NAME: Multiply Button
+#+BEGIN_SRC javascript
+	                $('#multiply_button').on('click',function () {
+				var operands = double_pop();
+				// expression.push('x');
+				values.push(parseFloat((parseFloat(operands[1])*parseFloat(operands[0])).toFixed(3)));
+				writeNumbers();
+			});
+#+END_SRC
+
+* DIvide Button
+#+NAME: Divide Button
+#+BEGIN_SRC javascript
+                        $('#divide_button').on('click',function () {
+				var operands = double_pop();
+				// expression.push('/');
+				values.push(parseFloat((parseFloat(operands[1])/parseFloat(operands[0])).toFixed(3)));
+				writeNumbers();
+			});
+
+#+END_SRC
+
+* Exponent Button
+#+NAME: Exponent Button
+#+BEGIN_SRC javascript
+			$('#exponent_button').on('click',function ()	{
+				var operands = double_pop();
+				// expression.push('^');
+				values.push(parseFloat((Math.pow(parseFloat(operands[1]),parseFloat(operands[0])).toFixed(3))));
+				console.log('values');
+				writeNumbers();
+			});
+#+END_SRC
+
+* Restart Button
+#+NAME: Restart Button
+#+BEGIN_SRC javascript
+			$('#restart_button').on('click', function() {
+				values.length = 0;
+				// expression.length = 0;
+				clearCanvas();
+				
+				
+	
+			});
+
+#+END_SRC
+
+* Tangle 
+#+BEGIN_SRC javascript :tangle postfix_eval.js :eval no :noweb yes
+var EvMaker = function () {
+
+	var obj = {};
+		var postfix_eval = function(divElem)
+		{
+	         
+	
+		$(document).ready(function() {
+
+<<create element>>
+<<create element with class>>
+<<create button>>
+<<generate DOM elements>>
+<<Initialise variables>>
+<<Clear the canvas>>
+<<Draw in the Canvas>>
+<<define the box boundaries>>                  
+<<double pop>>
+<<writeNumbers>>
+<<Push Button>>
+<<Show Answer Button>>
+<<Pop Button>>
+<<Enable Operators>>
+<<Check Answer>>
+<<Add Button>>
+<<Subtract Button>>
+<<Multiply Button>>
+<<Divide Button>>
+<<Exponent Button>>
+<<Restart Button>>
+
+
+
+			var values = new Array();
+			var expression = new Array();
+	});
+	};
+		obj.postfix_eval = postfix_eval;
+		return obj;
+	
+	};
+	
+#+END_SRC
+
+
+
+
+
+
+
+
+
