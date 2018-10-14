@@ -53,7 +53,7 @@ Week 8 [2018-09-28] till [2018-10-04 Thu]
  - We updated the Style sheets of Infix to Post fix Exercise.
  - We Made the Universal Cascading Style sheets according to Responsiveness.
  - 
-Week 9 [2018-10-05 Fri] till [2018-10-08 Tue] - [2018-10-11]Thu
+Week 9 [2018-10-05 Fri] till [2018-10-08 Tue] - [2018-10-11 Thu]
 - My team started making on video demos for all the artefacts.
 - I made video demos for artefact 1 and 2.
 - I Added Subtitles to Artefacts 1 and 2.
@@ -62,4 +62,6 @@ Week 9 [2018-10-05 Fri] till [2018-10-08 Tue] - [2018-10-11]Thu
 - I made the Video requirements for R1.
 
 
-Week 9 [2018-10-09 Fri] till [2018-10-]
+Week 9 [2018-10-12 Fri] till [2018-10-18 Thu]
+ - Getting started with Third Artefact.
+ 
