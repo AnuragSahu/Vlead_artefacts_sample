@@ -64,4 +64,4 @@ Week 9 [2018-10-05 Fri] till [2018-10-08 Tue] - [2018-10-11 Thu]
 
 Week 9 [2018-10-12 Fri] till [2018-10-18 Thu]
  - Getting started with Third Artefact.
- 
+ - Making the small improvement in responsiveness of Third Artefact.
