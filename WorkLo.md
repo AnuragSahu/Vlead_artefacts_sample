@@ -23,7 +23,7 @@ Week 3 [2018-08-24 Fri] till [2018-08-30 Thu]
 
 Week 4 [2018-08-31 Fri] till [2018-09-7 Thu]
 
-- We did revist the working of catalog servie again.
+- We did revist t*he working of catalog servie again.
 - I understood the working of rendering the artefacts in the catalog service.
 - I understood the issues already listed already with the help of a teammate in who have already worked on this practical in Summer internship.
 
@@ -53,10 +53,13 @@ Week 8 [2018-09-28] till [2018-10-04 Thu]
  - We updated the Style sheets of Infix to Post fix Exercise.
  - We Made the Universal Cascading Style sheets according to Responsiveness.
  - 
-Week 9 [2018-10-05 Fri] till [2018-10-08]
+Week 9 [2018-10-05 Fri] till [2018-10-08 Tue] - [2018-10-11]Thu
 - My team started making on video demos for all the artefacts.
 - I made video demos for artefact 1 and 2.
 - I Added Subtitles to Artefacts 1 and 2.
 - Fixed the bugs in the artefacts.
 - I made the Slides For R1.
 - I made the Video requirements for R1.
+
+
+Week 9 [2018-10-09 Fri] till [2018-10-]
